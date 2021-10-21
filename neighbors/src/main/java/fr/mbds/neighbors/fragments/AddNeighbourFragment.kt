@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
-import androidx.core.view.isNotEmpty
 import androidx.fragment.app.Fragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputLayout
@@ -27,7 +26,6 @@ class AddNeighbourFragment : Fragment() {
     private lateinit var adress: TextInputLayout
     private lateinit var aboutme: TextInputLayout
     private lateinit var back: FloatingActionButton
-    var check = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -51,7 +49,7 @@ class AddNeighbourFragment : Fragment() {
         valider = view.findViewById(R.id.buttonAdd)
 
         this.control()
-         valider.isEnabled = false
+        valider.isEnabled = false
         valider.setOnClickListener {
 
             val new = Neighbor(
@@ -84,6 +82,12 @@ class AddNeighbourFragment : Fragment() {
 
         return view
     }
+    private fun enableSaveNeighbour() {
+        valider.isEnabled =
+            nom.editText?.text!!.isNotBlank() && image.editText?.text!!.isNotBlank() &&
+            phone.editText?.text!!.isNotBlank() && website.editText?.text!!.isNotBlank() &&
+            adress.editText?.text!!.isNotBlank() && aboutme.editText?.text!!.isNotBlank()
+    }
 
     private fun control() {
         this.controlImage()
@@ -92,8 +96,6 @@ class AddNeighbourFragment : Fragment() {
         this.controlWebsite()
         this.controlAdress()
         this.controlAboutMe()
-        if (nom.isNotEmpty())
-            valider.isEnabled = true
     }
 
     private fun controlImage() {
@@ -118,6 +120,7 @@ class AddNeighbourFragment : Fragment() {
                 /*val imageUrl = URL(image.getEditText()?.text.toString()).openStream()
                 val imageBitmaped: Bitmap? = BitmapFactory.decodeStream(imageUrl)
                 imageNeighbor.setImageBitmap(imageBitmaped)*/
+                enableSaveNeighbour()
             }
         })
     }
@@ -137,6 +140,7 @@ class AddNeighbourFragment : Fragment() {
             }
 
             override fun afterTextChanged(p0: Editable?) {
+                enableSaveNeighbour()
             }
         })
     }
@@ -159,6 +163,7 @@ class AddNeighbourFragment : Fragment() {
             }
 
             override fun afterTextChanged(p0: Editable?) {
+                enableSaveNeighbour()
             }
         })
     }
@@ -181,6 +186,7 @@ class AddNeighbourFragment : Fragment() {
             }
 
             override fun afterTextChanged(p0: Editable?) {
+                enableSaveNeighbour()
             }
         })
     }
@@ -200,6 +206,7 @@ class AddNeighbourFragment : Fragment() {
             }
 
             override fun afterTextChanged(p0: Editable?) {
+                enableSaveNeighbour()
             }
         })
     }
@@ -219,6 +226,7 @@ class AddNeighbourFragment : Fragment() {
             }
 
             override fun afterTextChanged(p0: Editable?) {
+                enableSaveNeighbour()
             }
         })
     }

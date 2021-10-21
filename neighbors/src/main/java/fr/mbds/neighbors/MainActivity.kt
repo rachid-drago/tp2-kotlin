@@ -6,9 +6,12 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import fr.mbds.neighbors.fragments.AddNeighbourFragment
 import fr.mbds.neighbors.fragments.ListNeighborsFragment
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 
 class MainActivity : AppCompatActivity(), NavigationListener {
     private lateinit var toolbar: Toolbar
+    val executorService: ExecutorService = Executors.newFixedThreadPool(2)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
