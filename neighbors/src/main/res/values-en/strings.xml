@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title1">List of neighbors</string>
+    <string name="title2">Add neighbor</string>
+    <string name="app_name">My Aplication</string>
+    <string name="hint_image">image</string>
+    <string name="hint_nom">name</string>
+    <string name="hint_tel">tel</string>
+    <string name="hint_web"> web</string>
+    <string name="hint_address">address</string>
+    <string name="hint_apropos">about</string>
+    <string name="hint_addButton">add </string>
+</resources>

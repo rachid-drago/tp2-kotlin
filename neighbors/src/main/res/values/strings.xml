@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="title1">Liste des voisins</string>
+    <string name="title2">Ajouter voisin</string>
+    <string name="app_name">Mon Aplication</string>
+    <string name="hint_image">image</string>
+    <string name="hint_nom">nom</string>
+    <string name="hint_tel">tel</string>
+    <string name="hint_web"> web</string>
+    <string name="hint_address">address</string>
+    <string name="hint_apropos">apropos</string>
+    <string name="hint_addButton">ajouter</string>
+</resources>
